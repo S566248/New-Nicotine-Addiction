@@ -1,53 +1,76 @@
-# New-Nicotine-Addiction
+# Analyzing the New Generation of Nicotine Addiction
+## Overview
+This project investigates the impact of e-cigarettes and vapes on nicotine addiction rates, particularly among younger demographics. Using demographic and personality data, machine learning models were employed to predict nicotine addiction status and identify key contributing factors. This study provides insights into behavioral patterns and strategies for targeted interventions to reduce nicotine dependency.
 
-# Nicotine Addiction and E-Cig/Vape Influence Analysis
+## Problem Statement
+The emergence of e-cigarettes and vapes has shifted nicotine consumption patterns, leading to increased addiction rates in younger populations. This project aims to:
 
-## Project Overview
-This project explores the influence of e-cigarettes and vapes on nicotine addiction rates. With the rise of e-cig and vape sales, especially among young adults, this study aims to analyze how these products impact nicotine addiction trends. Additionally, we will use machine learning to predict future addiction rates based on current data trends, providing valuable insights into the public health impact of e-cigarettes and vapes.
+    Analyze the influence of personality traits and demographics on nicotine addiction.
+    Build predictive models to identify individuals at risk of addiction.
+    Highlight actionable insights for health interventions.
 
-## Project Goals
-1. Investigate the correlation between e-cig/vape presence and nicotine addiction rates.
-2. Predict future nicotine addiction trends using machine learning models.
-3. Visualize the impact of e-cigarette and vape sales on public health.
+## Data Source
+The dataset for this analysis was obtained from a public repository, containing 1,885 records and 32 attributes, including:
 
-## Domain
-**Nicotine addiction and e-cig/vape influence**  
-This domain is of interest due to the increasing popularity of e-cigs and vapes and their potential long-term impact on nicotine dependency among different age groups. This project aims to provide insights that could inform public health policies and educational efforts.
+Demographics: Age, Gender, Country
+Personality Traits: Neuroticism Score (Nscore), Extroversion Score (Escore), Impulsiveness (Impulsive)
+Target Variable: Nicotine addiction status
 
-## Data Sources
-- **Primary Sources**: Kaggle (for related datasets)
-- **Secondary Sources**: Sales data from vape and e-cig companies (if accessible)
+## Exploratory Data Analysis (EDA)
+Key steps in EDA included:
 
-## Data Problem
-The central data problem is to analyze how the presence of e-cigs and vapes has affected nicotine addiction rates. This is both interesting and important, as it addresses public health concerns and helps forecast potential future trends in nicotine dependency.
+Distribution Analysis:
+Most participants were aged 18–30, with personality scores distributed normally.
+Correlation Analysis:
+Weak correlations were observed between age and personality traits.
+Outlier Detection:
+Boxplots identified minor outliers in impulsiveness scores.
+Key Insights:
+Impulsiveness and neuroticism emerged as critical predictors of nicotine addiction.
 
-## Tools and Techniques
-- **Machine Learning**: A predictive analysis model will be used to project future nicotine addiction trends, considering current data. This approach will allow us to anticipate how addiction rates might evolve.
-- **Data Visualization**: Tableau and Excel will be used for data visualization, helping to present trends and findings in an understandable format.
+## Visualizations
+Age Distribution Histogram: Highlighted the prevalence of younger participants.
+Correlation Heatmap: Showed relationships between numerical features.
+Feature Importance Plot: Identified top predictors like impulsiveness and neuroticism.
 
-## Project Phases
-1. **Define the Problem**: Clearly outline research questions and objectives.
-2. **Data Collection**: Gather datasets from Kaggle and relevant sales data.
-3. **Data Cleaning**: Process and clean the data to ensure accuracy and consistency.
-4. **Exploratory Analysis**: Analyze initial trends and correlations in the data.
-5. **Model Building**: Create predictive models to project future addiction rates.
-6. **Validation**: Evaluate model performance to ensure accuracy.
-7. **Implementation**: Generate visualizations and reports to communicate findings.
 
-## Expected Outcomes
-1. Understand the impact of e-cigarettes and vapes on nicotine addiction.
-2. Predict how nicotine addiction trends may change in the coming years.
-3. Provide a visual representation of these trends for easier understanding by stakeholders.
+## Machine Learning Models
+Three machine learning models were developed:
 
-## Dependencies
-- **Python** (for data cleaning and model building)
-- **Pandas, Numpy** (data manipulation)
-- **Scikit-Learn** (machine learning models)
-- **Tableau, Excel** (for data visualization)
+Logistic Regression: Offered interpretability but had lower accuracy.
+Random Forest Classifier: Achieved the best performance with:
+Accuracy: 85%
+F1-Score: 0.86
+Support Vector Machine (SVM): Balanced precision and recall but underperformed compared to Random Forest.
 
-## Getting Started
-1. Clone the repository.
-2. Install the required dependencies.
-3. Access and preprocess data.
-4. Execute model-building scripts and generate visualizations.
-5. Analyze results and review predictive insights.
+### Implementation Highlights
+Data Preprocessing: Scaling and encoding to standardize features.
+Train-Test Split: 80% training, 20% testing.
+Hyperparameter Tuning: Optimized model parameters using grid search.
+
+### Results
+The Random Forest Classifier was the most effective model.
+Personality traits (Impulsiveness, Neuroticism) were the strongest predictors of nicotine addiction.
+
+## Limitations
+Potential bias in survey-based data.
+Lack of longitudinal data to track addiction trends over time.
+Missing values in some demographic attributes, which reduced data completeness.
+
+## Future Work
+Incorporate longitudinal datasets to analyze long-term patterns in nicotine addiction.
+Include additional features, such as socioeconomic factors and environmental influences.
+Explore the use of deep learning models for enhanced predictive capabilities.
+
+## Abstract
+This study explores the effects of e-cigarettes and vapes on nicotine addiction rates. Using machine learning models and visualization tools, the analysis revealed that impulsiveness and neuroticism significantly contribute to addiction. The Random Forest Classifier achieved high predictive accuracy (F1-score: 0.86), offering insights into addiction behaviors and informing targeted interventions.
+
+## Screenshots
+### Age Distribution Histogram
+![alt text](Age_Distribution_Histogram.png)
+### KDE Plot of Personality Scores
+![alt text](KDE_Plot_of_Personality_Scores.png)
+### Correlation Heatmap
+![alt text](Correlation_Heatmap.png)
+### Pairplot for Numerical Features
+![alt text](Pairplot_for_Numerical_Features.png)
